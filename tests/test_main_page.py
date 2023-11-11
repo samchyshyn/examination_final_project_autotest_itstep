@@ -18,10 +18,18 @@ class TestMainPage:
     def test_main_page_header(self, browser):
         self.link_to_cabinet = browser.current_url
         page = MainPage(browser, self.link_to_cabinet)
+        page.is_number_phone()
+        page.is_button_telegram()
         page.is_button_registration()
         page.is_button_login()
-        page.is_button_wishlist()
-        page.is_number_phone()
+        page.is_button_main_menu()
+        page.is_button_oplata_dostavka()
+        page.is_button_new_products()
+        page.is_button_bestcellers()
+        page.is_button_contacts()
+        page.is_button_koshyk()
+        page.is_search_input_field()
+        page.is_search_button()
 
 
 

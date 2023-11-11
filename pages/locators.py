@@ -2,19 +2,22 @@ from selenium.webdriver.common.by import By
 
 
 class BasePageLocators:
-    LOGO_ = (By.XPATH, '//a[@class="logo"]')
-    MAIN_MENU = (By.XPATH, '//a[text()="Головна"]')
-    OPLATA_I_DOSTAVKA_MENU = (By.XPATH, '//ul[@class="top-menu"]//a[@href="cart/show"]')
-    NEW_PRODUCTS_MENU = (By.XPATH, '//a[@href="/ua/newproducts"]')
-    BESTCELLERY_MENU = (By.XPATH, '//ul[@class="top-menu"]//a[@href="/ua/newproducts"]')
-    CONTACTS_MENU = (By.XPATH, '//a[@href="/ua/contactus"]')
-    BASKET = (By.XPATH, '//a[@class="cart-trigger"]')
-    INPUT_SEARCH = (By.XPATH, '//input[@id="small-searchterms"]')
-    BUTTON_SEARCH = (By.XPATH, '//button[@type="submit"]')
+    PHONE = (By.XPATH, '//span[text()="+38 073 938 79 43"]')
+    BUTTON_TELEGRAM = (By.XPATH, '//a[@class="social-logo telegram"]')
     ACCOUNT = (By.XPATH, '//div[@class="header-links-wrapper"]')
     MENU_REGISTRATION = (By.XPATH, '//a[@class="ico-register"]')
     MENU_LOGIN = (By.XPATH, '//a[@class="ico-login"]')
     MENU_WISHLIST = (By.XPATH, '//a[@class="ico-wishlist"]')
+
+    LOGO_ = (By.XPATH, '//a[@class="logo"]')
+    MAIN_MENU = (By.XPATH, '//a[text()="Головна"]')
+    OPLATA_I_DOSTAVKA_MENU = (By.XPATH, '//ul[@class="top-menu"]//a[@href="/ua/oplata-i-dostavka"]')
+    NEW_PRODUCTS_MENU = (By.XPATH, '//a[@href="/ua/newproducts"]')
+    BESTCELLERY_MENU = (By.XPATH, '//ul[@class="top-menu"]//a[@href="/ua/newproducts"]')
+    CONTACTS_MENU = (By.XPATH, '//a[@href="/ua/contactus"]')
+    KOSHYK = (By.XPATH, '//a[@class="cart-trigger"]')
+    INPUT_SEARCH = (By.XPATH, '//input[@id="small-searchterms"]')
+    BUTTON_SEARCH = (By.XPATH, '//button[@type="submit"]')
     ####################################################################
     SUBSCRIBE = (By.XPATH, '//input[@placeholder="Введіть ваш email..."]')
     INPUT_SUBSCRIBE = (By.XPATH, '//button[@id="newsletter-subscribe-button"]')
@@ -23,7 +26,7 @@ class BasePageLocators:
     WAR_BOOK_FOOTER = (By.XPATH, '//div[@class="footer-block"]//a[text()="Військова книга"]')
     OSOBYSTYJ_KABINET_FOOTER = (By.XPATH, '//a[text()="Особистий кабінет"]')
     KOSHYK_FOOTER = (By.XPATH, '//a[text()="Кошик"]')
-    PHONE = (By.XPATH, '//span[text()="+38 073 938 79 43"]')
+
 
 class MainPageLocators:
     BUTTON_HUDOJNJA_LITERATURA = (By.XPATH, '//div[@class="two-columns-area-left"]//a[text()="Художня література"]')
