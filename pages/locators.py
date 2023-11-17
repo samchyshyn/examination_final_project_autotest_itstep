@@ -5,9 +5,10 @@ class BasePageLocators:
     PHONE = (By.XPATH, '//span[text()="+38 073 938 79 43"]')
     BUTTON_TELEGRAM = (By.XPATH, '//a[@class="social-logo telegram"]')
     ACCOUNT = (By.XPATH, '//div[@class="header-links-wrapper"]')
-    MENU_REGISTRATION = (By.XPATH, '//a[@class="ico-register"]')
+    MENU_SIGNUP = (By.XPATH, '//a[@class="ico-register"]')
     MENU_LOGIN = (By.XPATH, '//a[@class="ico-login"]')
     MENU_WISHLIST = (By.XPATH, '//a[@class="ico-wishlist"]')
+    MENU_LOGOUT = (By.XPATH, '//a[@class="ico-logout"]')
 
     LOGO_ = (By.XPATH, '//a[@class="logo"]')
     MAIN_MENU = (By.XPATH, '//a[text()="Головна"]')
@@ -25,8 +26,11 @@ class BasePageLocators:
     SUB_MENU_COMIKSY_MARVEL = (By.XPATH, '//div[@class="two-columns-area-left"]//li[7]//a[text()="Комікси Marvel"]')
     BUTTON_GOTOTOP = (By.XPATH, '//div[@id="goToTop"]')
     ####################################################################
-    SUBSCRIBE = (By.XPATH, '//input[@placeholder="Введіть ваш email..."]')
-    INPUT_SUBSCRIBE = (By.XPATH, '//button[@id="newsletter-subscribe-button"]')
+    SUBSCRIBE = (By.XPATH, "//button[text() = 'Підписатися']")
+    INPUT_SUBSCRIBE = (By.XPATH, '//input[@class="newsletter-subscribe-text"]')
+    ALERT_SUCCESS = (By.XPATH, '//div[contains(text(), "Дякуємо")]')
+    ALERT_ERROR = (By.XPATH, "//div[@id = 'alert-error']")
+
     OPLATA_I_DOSTAVKA_FOOTER = (By.XPATH, '//div[@class="footer-block"]//a[text()="Оплата і доставка"]')
     AVTORS_FOOTER = (By.XPATH, '//a[text()="Автори"]')
     WAR_BOOK_FOOTER = (By.XPATH, '//div[@class="footer-block"]//a[text()="Військова книга"]')
@@ -40,10 +44,8 @@ class MainPageLocators:
     BUTTON_POKAZAT_ESHCHO = (By.XPATH, '//a[text()="Показать еще"]')
     SECTION_HITS_PRODAG = (By.XPATH, '//div[@class="page-body"]//div[@class="jCarouselMainWrapper"][1]')
     # SECTION_HITS_PRODAG = (By.XPATH, '//div[@id="jcarousel-3-488"]')
-    BUTTON_PREV_HITS = (By.XPATH,
-                        '//div[@class="page-body"]//div[@class="jCarouselMainWrapper"][1]//button[@aria-label="Previous"]')
-    BUTTON_NEXT_HITS = {By.XPATH,
-                        '//div[@class="page-body"]//div[@class="jCarouselMainWrapper"][1]//button[@aria-label="Next"]'}
+    BUTTON_PREV_HITS = (By.XPATH, '//div[@class="page-body"]//div[@class="jCarouselMainWrapper"][1]//button[@aria-label="Previous"]')
+    BUTTON_NEXT_HITS = (By.XPATH, '//div[@class="page-body"]//div[@class="jCarouselMainWrapper"][1]//button[@aria-label="Next"]')
     SECTION_BESTSELLER_PRODUCTS = (By.XPATH, '//div[@class="page-body"]//div[@class="jCarouselMainWrapper"][2]')
     BUTTON_PREV_BESTSELLER = (By.XPATH, '//div[@class="page-body"]//div[@class="jCarouselMainWrapper"][2]//button[@aria-label="Previous"]')
     BUTTON_NEXT_BESTSELLER = (By.XPATH, '//div[@class="page-body"]//div[@class="jCarouselMainWrapper"][2]//button[@aria-label="Next"]')
@@ -60,23 +62,27 @@ class MainPageLocators:
     MENU_WAR_BOOK = (By.XPATH, '//a[text()=" Військова книга "]')
     SUB_MENU_HISTORY_OF_WARS = (By.XPATH, '//a[text()=" Історія воєн "]')
 
-class RegistrationPageLocators:
+
+class SignupPageLocators:
     INPUT_NAME = (By.XPATH, '//input[@id="FirstName"]')
     INPUT_LASTNAME = (By.XPATH, '//input[@id="LastName"]')
     INPUT_EMAIL = (By.XPATH, '//input[@id="Email"]')
     INPUT_PHONE = (By.XPATH, '//input[@id="Phone"]')
     INPUT_PASSWORD = (By.XPATH, '//input[@id="Password"]')
     INPUT_CONFIRM_PASSWORD = (By.XPATH, '//input[@id="ConfirmPassword"]')
-    BUTTON_REGISTRATION = (By.XPATH, '//button[@id="register-button"]')
+    BUTTON_SIGNUP = (By.XPATH, '//button[@id="register-button"]')
+    H2_SIGNUP = (By.XPATH, '//div[@class="page-title"]')
+    ALERT_SUCCESS = (By.XPATH, '//div[text() = "Реєстрація завершена"]')
 
 class LoginPageLocators:
-    BUTTON_NEW_CLIENT = '//strong[text()="Новий клієнт"]'
-    EMAIL = (By.XPATH, '//input[@class="email"]')
-    PASSWORD = (By.XPATH, '//input[@class="password"]')
-    CHECKBOX_REMEMBERME = '//input[@type="checkbox"]'
-    BUTTON_PASSWORD_RECOVERY = '//a[@href="/ua/passwordrecovery"]'
-    BUTTON_SIGN_IN = '//button[text()="Увійти"]'
-    BUTTON_WITHOUT_REGISTRATION = '//button[text()="Оформити замовлення без реєстрації"]'
+    BUTTON_NEW_CLIENT = (By.XPATH, '//strong[text()="Новий клієнт"]')
+    H1_LOGIN = (By.XPATH, '//div[@class="page-title"]')
+    INPUT_EMAIL = (By.XPATH, '//input[@class="email"]')
+    INPUT_PASSWORD = (By.XPATH, '//input[@class="password"]')
+    CHECKBOX_REMEMBERME = (By.XPATH, '//input[@type="checkbox"]')
+    BUTTON_PASSWORD_RECOVERY = (By.XPATH, '//a[@href="/ua/passwordrecovery"]')
+    BUTTON_LOGIN = (By.XPATH, '//button[text()="Увійти"]')
+    BUTTON_WITHOUT_REGISTRATION = (By.XPATH, '//button[text()="Оформити замовлення без реєстрації"]')
 
 class OrderingPageLocators:
     INPUT_FIO = (By.XPATH, '//select[@class="ng-pristine ng-valid valid ng-touched"]')

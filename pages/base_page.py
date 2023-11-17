@@ -81,6 +81,15 @@ class BasePage:
         except NoSuchElementException: return None
         return text
 
+    def scroll_page(self):
+        # self.browser.execute_script("window.scrollTo(0,document.body.scrollHeight)")
+        y = 500
+        for timer in range(0, 50):
+            self.browser.execute_script("window.scrollTo(0, " + str(y) + ")")
+            y += 500
+            time.sleep(1)
+
+
     def login_to_cabinet(self, user_name, user_password):
         pass
 
