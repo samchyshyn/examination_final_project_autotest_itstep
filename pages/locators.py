@@ -60,8 +60,37 @@ class MainPageLocators:
 
     MENU_HUDOJNJA_LITERATURA = (By.XPATH, '//a[text()=" Художня література "]')
     MENU_WAR_BOOK = (By.XPATH, '//a[text()=" Військова книга "]')
-    SUB_MENU_HISTORY_OF_WARS = (By.XPATH, '//a[text()=" Історія воєн "]')
 
+class OrderPageLocators:
+    FIRST_PRODUCT = (By.XPATH, '//div[@class="product-grid"][1]//div[@class="item-box"][3]')
+    BUTTON_ADD_FIRST_PRODUCT = (By.XPATH, '//div[@class="product-grid"][1]//div[@class="item-box"][8]//span[text() ="У кошик"]')
+    PRICE_FIRST_PRODUCT = (By.XPATH, '//strong[@class="price"]')
+
+    BTN_CONTINUE_SHOP_POPUP = (By.XPATH, '//a[text()="Продовжити покупки"]')
+    BTN_VIEW_YOUR_CART = (By.XPATH, '//a[text() = "Подивитися ваш кошик"]')
+
+    MENU_MAGAZINES = (By.XPATH, '//div[@class="two-columns-area-left"]//a[text()="Журнали"]')
+    SUB_MENU_MAGAZINE_UNIVERSE = (By.XPATH, '//div[@class="two-columns-area-left"]//li[4]//a[text()="Всесвіт"]')
+    ALERT_MAGAZINE_UNIVERSE = (By.XPATH, '//h1[text()="Журнал Всесвіт"]')
+    INPUT_QUANTITY = (By.XPATH, '//input[@class="productQuantityTextBox"]')
+    BUTTON_ADD_SECOND_PRODUCT = (By.XPATH, '//span[text() ="У кошик"]')
+    MENU_IS_SEARCHING_1 = (By.XPATH, '//li[@class="ui-menu-item"][1]')
+    BUTTON_ADD_3_PRODUCT = (By.XPATH, '//button[@class="button-1 add-to-cart-button nopAjaxCartProductVariantAddToCartButton"]')
+
+    REMOVE_BTN_1_IN_CART = (By.XPATH, '//tr[1]//button[@class="remove-btn"]')
+    QUANTITY_SECOND_PRODUCT = (By.XPATH, '//tr[1]//input[@class="qty-input"]')
+    BUTTON_CHECKOUT = (By.XPATH, '//button[@name="checkout"]')
+    BUTTON_UPDATE_CART = (By.XPATH, '//button[text()="Оновити кошик"]')
+
+    ALERT_ORDER_PLACEMENT = (By.XPATH, '//div[@class="page-title"]')    #   ОФОРМЛЕННЯ ЗАМОВЛЕННЯ
+    BUTTON_POST = (By.XPATH, '//input[@value="post"]')
+    MENU_CITY_SEARCH = (By.XPATH, '//span[@aria-labelledby="select2-js-data-example-ajax-container"]')
+    FIELD_CITY_SEARCH = (By.XPATH, '//input[@class="select2-search__field"]')
+    SELECT_RESULT_SEARCH = (By.XPATH, '//ul[@class="select2-results__options"]')
+    FIELD_PLACEHOLDER_SEARCH = (By.XPATH, '//span[@class="select2-selection__placeholder"]')
+    SELECT_PLACEHOLDER_SEARCH = (By.XPATH, '//li[@class="select2-results__option"][4]')
+    SELECT_BTN_POSTPAID = (By.XPATH, '//input[@id="paymentmethod_1"]')
+    BUTTON_PLACE_AN_ORDER = (By.XPATH, '//button[@data-complete="Оформити замовлення"]')
 
 class SignupPageLocators:
     INPUT_NAME = (By.XPATH, '//input[@id="FirstName"]')
@@ -84,12 +113,9 @@ class LoginPageLocators:
     BUTTON_LOGIN = (By.XPATH, '//button[text()="Увійти"]')
     BUTTON_WITHOUT_REGISTRATION = (By.XPATH, '//button[text()="Оформити замовлення без реєстрації"]')
 
-class OrderingPageLocators:
-    INPUT_FIO = (By.XPATH, '//select[@class="ng-pristine ng-valid valid ng-touched"]')
-    INPUT_NAME = (By.XPATH, '//input[@id="shippingFirstName"]')
-    INPUT_LASTNAME = (By.XPATH, '//input[@id="shippingLastName"]')
-    INPUT_EMAIL = (By.XPATH, '//input[@id="shippingEmail"]')
-    INPUT_PHONE = (By.XPATH, '//input[@id="shippingPhoneNumber"]')
-    INPUT_CITY = (By.XPATH, '//input[@id="shippingPhoneNumber"]')
-    INPUT_DEPARTMENTS = (By.XPATH, '//input[@id="shippingPhoneNumber"]')
 
+
+
+
+#   pytest -s -v -m "main_page" --browser_mode="gui" --browser_name="firefox"
+#               -m "signup_login_logout"   -m "order_page"
