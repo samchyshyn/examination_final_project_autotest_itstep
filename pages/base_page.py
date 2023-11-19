@@ -89,6 +89,8 @@ class BasePage:
             y += 500
             time.sleep(1)
 
+    def scroll_page_in_pix(self, scrl):  # разовий скрол на потрібний рядок сторінки (в пікселях)
+        self.browser.execute_script("window.scrollTo(0," + str(scrl) + ")")
 
     def login_to_cabinet(self, user_name, user_password):
         pass

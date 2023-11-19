@@ -52,7 +52,7 @@ class MainPageLocators:
     SECTION_POPULAR_AUTHORS = (By.XPATH, '//div[@class="product-grid"][2]')
     POPULAR_AUTHOR_1 = (By.XPATH, '//div[@class="product-grid"][2]//div[@class="item-box"][1]')
     BUTTON_ALL_AUTHORS = (By.XPATH, '//a[text()="Все авторы"]')
-
+    AUTOR_TOLKIN = (By.XPATH, '//a[@href="/ua/tolkin-dzhon-ronald-ruel"]')
     SECTION_POPULAR_SERIES = (By.XPATH, '//div[@class="product-grid"][3]')
     POPULAR_SERIJA_3 = (By.XPATH, '//div[@class="product-grid"][3]//div[@class="item-box"][3]')
     BUTTON_ALL_SERIES = (By.XPATH, '//a[text()="Все серии"]')
@@ -60,11 +60,11 @@ class MainPageLocators:
 
     MENU_HUDOJNJA_LITERATURA = (By.XPATH, '//a[text()=" Художня література "]')
     MENU_WAR_BOOK = (By.XPATH, '//a[text()=" Військова книга "]')
+    SUB_MENU_HISTORY_OF_WARS = (By.XPATH, '//a[text()=" Історія воєн "]')
 
 class OrderPageLocators:
-    FIRST_PRODUCT = (By.XPATH, '//div[@class="product-grid"][1]//div[@class="item-box"][3]')
-    BUTTON_ADD_FIRST_PRODUCT = (By.XPATH, '//div[@class="product-grid"][1]//div[@class="item-box"][8]//span[text() ="У кошик"]')
-    PRICE_FIRST_PRODUCT = (By.XPATH, '//strong[@class="price"]')
+    BUTTON_ADD_FIRST_PRODUCT = (By.XPATH, '//div[@class="item-grid"]/div[2]//span[text() ="У кошик"]')
+    PRICE_1_PRODUCT = (By.XPATH, '//div[@class="item-grid"]/div[2]//span[@class="price actual-price"]')
 
     BTN_CONTINUE_SHOP_POPUP = (By.XPATH, '//a[text()="Продовжити покупки"]')
     BTN_VIEW_YOUR_CART = (By.XPATH, '//a[text() = "Подивитися ваш кошик"]')
@@ -74,11 +74,13 @@ class OrderPageLocators:
     ALERT_MAGAZINE_UNIVERSE = (By.XPATH, '//h1[text()="Журнал Всесвіт"]')
     INPUT_QUANTITY = (By.XPATH, '//input[@class="productQuantityTextBox"]')
     BUTTON_ADD_SECOND_PRODUCT = (By.XPATH, '//span[text() ="У кошик"]')
+    PRICE_2_PRODUCT = (By.XPATH, '//span[@class="price actual-price"]')
     MENU_IS_SEARCHING_1 = (By.XPATH, '//li[@class="ui-menu-item"][1]')
     BUTTON_ADD_3_PRODUCT = (By.XPATH, '//button[@class="button-1 add-to-cart-button nopAjaxCartProductVariantAddToCartButton"]')
-
+    PRICE_3_PRODUCT = (By.XPATH, '//span[@class="price-value-20104"]')
     REMOVE_BTN_1_IN_CART = (By.XPATH, '//tr[1]//button[@class="remove-btn"]')
     QUANTITY_SECOND_PRODUCT = (By.XPATH, '//tr[1]//input[@class="qty-input"]')
+    TOTAL_PRICE = (By.XPATH, '//span[@class="value-summary"]')
     BUTTON_CHECKOUT = (By.XPATH, '//button[@name="checkout"]')
     BUTTON_UPDATE_CART = (By.XPATH, '//button[text()="Оновити кошик"]')
 
@@ -112,9 +114,6 @@ class LoginPageLocators:
     BUTTON_PASSWORD_RECOVERY = (By.XPATH, '//a[@href="/ua/passwordrecovery"]')
     BUTTON_LOGIN = (By.XPATH, '//button[text()="Увійти"]')
     BUTTON_WITHOUT_REGISTRATION = (By.XPATH, '//button[text()="Оформити замовлення без реєстрації"]')
-
-
-
 
 
 #   pytest -s -v -m "main_page" --browser_mode="gui" --browser_name="firefox"

@@ -1,9 +1,9 @@
 import pytest
 from ..pages.base_page import BasePage
 from ..pages.signup_login_page import SignupLoginPage
-from ..pages.main_page import MainPage
 from ..settings import sets
 import random
+
 
 @pytest.mark.smoke
 @pytest.mark.regression

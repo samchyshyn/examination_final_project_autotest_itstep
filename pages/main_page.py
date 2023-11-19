@@ -16,7 +16,7 @@ class MainPage(base_page.BasePage):
     def is_button_registration(self):
         assert self.hover_action(*locators.BasePageLocators.ACCOUNT), \
             "Element 'Аккаунт' is not present"
-        assert self.is_element_present(*locators.BasePageLocators.MENU_REGISTRATION), \
+        assert self.is_element_present(*locators.BasePageLocators.MENU_SIGNUP), \
             "Button MENU_REGISTRATION is not present"
         print(f"{inspect.currentframe().f_code.co_name} - OK")
 
@@ -214,4 +214,17 @@ class MainPage(base_page.BasePage):
             "Element KOSHYK_FOOTER not present"
         print(f"{inspect.currentframe().f_code.co_name} - OK")
 
+    def subscribe_action(self, email):
+        assert self.input_data(*locators.BasePageLocators.INPUT_SUBSCRIBE, email), \
+            "The element is not present"
+        self.explicit_wait(5)
+        assert self.click_element(*locators.BasePageLocators.SUBSCRIBE), \
+            "The element is not present or intractable"
+        print(f"{inspect.currentframe().f_code.co_name} - Ok")
+
+    def is_alert_success_after_subscribe(self):
+        assert self.is_element_appears_after_while(*locators.BasePageLocators.ALERT_SUCCESS, timeout=5), \
+            "The element ALERT_SUCCESS is not present"
+        self.explicit_wait(5)
+        print(f"{inspect.currentframe().f_code.co_name} - Ok")
 

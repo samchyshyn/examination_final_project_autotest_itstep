@@ -2,6 +2,7 @@ import pytest
 from ..pages.base_page import BasePage
 from ..pages.main_page import MainPage
 from ..settings import sets
+import random
 
 @pytest.mark.smoke
 @pytest.mark.regression
@@ -9,11 +10,13 @@ from ..settings import sets
 class TestMainPage:
 
     def setup_method(self):
-        pass
+        hash_name = "%016x" % random.getrandbits(64)
+        self.email_for_signup = f"{hash_name}@mail.com"
 
     def test_get_main_page(self, browser):
         page = BasePage(browser, sets.PROD_SERVER)
         page.open()
+        # page.scroll_page()
 
     def test_main_page_header(self, browser):
         self.link_to_cabinet = browser.current_url
@@ -41,11 +44,11 @@ class TestMainPage:
         page.is_info_block_new_products()
         page.is_new_products_3()
         page.is_info_block_hits_prodag()
-        page.is_button_prev_hits()
-        # page.is_button_next_hits()
+    #    page.is_button_prev_hits()
+    #    page.is_button_next_hits()
         page.is_info_block_bestseller_products()
-        # page.is_button_prev_bestseller()
-        page.is_button_next_bestseller()
+    #    page.is_button_prev_bestseller()
+    #    page.is_button_next_bestseller()
         page.is_info_block_popular_authors()
         page.is_popular_authors_3()
         page.is_button_all_authors()
@@ -65,8 +68,9 @@ class TestMainPage:
         page.is_button_osob_kabinet_footer()
         page.is_button_koshyk_footer()
 
-    # def test_main_page_subscribe_action(self, browser):
-    #     self.link_to_cabinet = browser.current_url
-    #     page = MainPage(browser, self.link_to_cabinet)
-    #     page.subscribe_action(self.email_for_subscribe)
-    #     page.is_alert_success_after_subscribe()
+    def test_main_page_subscribe_action(self, browser):
+        self.link_to_cabinet = browser.current_url
+        page = MainPage(browser, self.link_to_cabinet)
+        page.subscribe_action(self.email_for_signup)
+        page.is_alert_success_after_subscribe()
+        page.explicit_wait(7)

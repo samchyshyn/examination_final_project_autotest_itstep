@@ -11,17 +11,12 @@ class OrderPage(base_page.BasePage):
     def add_to_cart_first_product(self):
         assert self.click_element(*locators.OrderPageLocators.BUTTON_ADD_FIRST_PRODUCT), \
             "The element is not present or intractable"
-        price = self.get_text(*locators.OrderPageLocators.PRICE_FIRST_PRODUCT)
-        price = int(price.replace(' грн / шт.')) # 1180
+        price = self.get_text(*locators.OrderPageLocators.PRICE_1_PRODUCT)
+        price = int(price.replace(' грн', '')) # 713
         print(f"{inspect.currentframe().f_code.co_name} - Ok ")
-    #    print(f" Ціна першого товару - {price}  ")
+        print(f" Ціна першого товару - {price}  ")
         if price:
             return price
-
-    def add_to_cart_first_product1(self):
-        assert self.click_element(*locators.OrderPageLocators.BUTTON_ADD_FIRST_PRODUCT), \
-            "The element is not present or intractable"
-        print(f"{inspect.currentframe().f_code.co_name} - Ok ")
 
     def press_btn_continue_shop_popup(self):
         assert self.click_element(*locators.OrderPageLocators.BTN_CONTINUE_SHOP_POPUP), \
@@ -50,7 +45,12 @@ class OrderPage(base_page.BasePage):
     def add_to_cart_second_product(self):
         assert self.click_element(*locators.OrderPageLocators.BUTTON_ADD_SECOND_PRODUCT), \
             "The element BUTTON_ADD_SECOND_PRODUCT is not present or intractable"
+        price = self.get_text(*locators.OrderPageLocators.PRICE_2_PRODUCT)
+        price = int(price.replace(' грн', ''))*2  # 713
         print(f"{inspect.currentframe().f_code.co_name} - Ok ")
+        print(f" Ціна другого товару - {price}  ")
+        if price:
+            return price
 
     def input_search_3_product(self, searching):
         assert self.clear_field(*locators.BasePageLocators.INPUT_SEARCH), \
@@ -67,11 +67,27 @@ class OrderPage(base_page.BasePage):
     def add_to_cart_3_product(self):
         assert self.click_element(*locators.OrderPageLocators.BUTTON_ADD_3_PRODUCT), \
             "The element BUTTON_ADD_SECOND_PRODUCT is not present or intractable"
+        price = self.get_text(*locators.OrderPageLocators.PRICE_3_PRODUCT)
+        price = int(price.replace(' грн', ''))
         print(f"{inspect.currentframe().f_code.co_name} - Ok ")
+        print(f" Ціна третього товару - {price}  ")
+        if price:
+            return price
 
     def press_btn_view_your_cart(self):     ##################################################
         assert self.click_element(*locators.OrderPageLocators.BTN_VIEW_YOUR_CART), \
             "The element currency is not present or intractable"
+        print(f"{inspect.currentframe().f_code.co_name} - Ok")
+
+    def check_total_price(self, price1, price2, price3):
+        total_price = self.get_text(*locators.OrderPageLocators.TOTAL_PRICE)
+        self.explicit_wait(2)
+        total_price = int(total_price.replace(' грн', ''))
+        print(f"total_prise int: {total_price}")
+        total_actual = price1 + price2+ price3
+        print(f"total_actual int: {total_actual}")
+        assert total_actual == total_price, \
+            "Total price doesn't match to actual"
         print(f"{inspect.currentframe().f_code.co_name} - Ok")
 
     def is_del_1_product_in_cart(self):
